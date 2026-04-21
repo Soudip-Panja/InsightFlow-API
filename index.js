@@ -3,8 +3,9 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
-const SECRET_KEY = "superadmin";
+const PASSWORD = "admin123";
 const JWT_SECRET = "your_jwt_secret";
+const EMAIL = "demo123admin@gmail.com";
 
 app.use(express.json());
 
@@ -25,9 +26,11 @@ const verifyJwt = (req, res, next) => {
 };
 
 app.post("/admin/login", (req, res) => {
-  const { secret } = req.body;
-  if (secret === SECRET_KEY) {
-    const token = jwt.sign({ role: "admin" }, JWT_SECRET, { expiresIn: "24h" });
+  const { email, password } = req.body;
+  if (email === EMAIL && password === PASSWORD) {
+    const token = jwt.sign({ role: "admin", email: EMAIL }, JWT_SECRET, {
+      expiresIn: "24h",
+    });
     res.json({ token });
   } else {
     res.json({ message: "Invalid Secret" });
