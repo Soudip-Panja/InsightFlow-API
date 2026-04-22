@@ -2,11 +2,11 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 
 const verifyJWT = require("./middleware/auth.middleware");
+const { JWT_SECRET, PORT } = require("./config/env");
 
 const app = express();
 
 const PASSWORD = "superadmin";
-const JWT_SECRET = "your_jwt_secret";
 const EMAIL = "demo123admin@gmail.com";
 
 app.use(express.json());
@@ -26,8 +26,6 @@ app.post("/admin/login", (req, res) => {
 app.get("/admin/auth/login", verifyJWT, (req, res) => {
   res.json({ message: " Test protected route accessable" });
 });
-
-PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
