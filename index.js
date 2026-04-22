@@ -1,29 +1,15 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
+const verifyJWT = require("./middleware/auth.middleware");
+
 const app = express();
 
-const PASSWORD = "admin123";
+const PASSWORD = "superadmin";
 const JWT_SECRET = "your_jwt_secret";
 const EMAIL = "demo123admin@gmail.com";
 
 app.use(express.json());
-
-const verifyJwt = (req, res, next) => {
-  const token = req.headers["authorization"];
-
-  if (!token) {
-    return res.status(401).json({ message: "No tokeken provided" });
-  }
-
-  try {
-    const decodedToken = jwt.verify(token, JWT_SECRET);
-    req.user = decodedToken;
-    next();
-  } catch (error) {
-    return res.status(402).json({ message: "Invalid Token" });
-  }
-};
 
 app.post("/admin/login", (req, res) => {
   const { email, password } = req.body;
@@ -37,8 +23,8 @@ app.post("/admin/login", (req, res) => {
   }
 });
 
-app.get("/admin/auth/login", verifyJwt, (req, res) => {
-  res.json({ message: "Protected route accessable" });
+app.get("/admin/auth/login", verifyJWT, (req, res) => {
+  res.json({ message: " Test protected route accessable" });
 });
 
 PORT = process.env.PORT || 3000;
