@@ -1,8 +1,13 @@
+const { initializeDatabase } = require("./db/db.connect");
+initializeDatabase();
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
 const verifyJWT = require("./middleware/auth.middleware");
 const { JWT_SECRET, PORT } = require("./config/env");
+
+
 
 const app = express();
 
