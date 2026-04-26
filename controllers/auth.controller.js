@@ -2,26 +2,33 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
 
-const verifyJWT = require("../middleware/auth.middleware");
-const { JWT_SECRET, PORT } = require("../config/env");
+const { JWT_SECRET } = require("../config/env");
+const User = require("../models/user.model");
 
-const PASSWORD = "superadmin";
-const EMAIL = "demo123admin@gmail.com";
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-router.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  if (email === EMAIL && password === PASSWORD) {
-    const token = jwt.sign({ role: "admin", email: EMAIL }, JWT_SECRET, {
-      expiresIn: "24h",
-    });
-    res.json({ token });
-  } else {
-    res.json({ message: "Invalid Secret" });
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    if (user.password !== password) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
+    const token = jwt.sign(
+      { role: user.role, email: user.email, userId: user._id },
+      JWT_SECRET,
+      { expiresIn: "24h" },
+    );
+
+    return res.json({ token, role: user.role });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
   }
-});
-
-router.get("/admin", verifyJWT, (req, res) => {
-  res.json({ message: " Test protected route accessable" });
 });
 
 module.exports = router;
