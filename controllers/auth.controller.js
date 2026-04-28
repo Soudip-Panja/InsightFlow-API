@@ -5,7 +5,7 @@ const router = express.Router();
 const { JWT_SECRET } = require("../config/env");
 const User = require("../models/user.model");
 
-// Login
+//Login
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//Register new user
+//Signup new user
 async function createUser(newUser) {
   try {
     const { name, email, password, role } = newUser;
@@ -69,7 +69,7 @@ async function createUser(newUser) {
   }
 }
 
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const savedUser = await createUser(req.body);
 
