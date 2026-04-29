@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Finance Dashboard",
+    "description": "A dashboard to track income, expenses, and financial reports"
+  },
+  {
+    "name": "E-Commerce App",
+    "description": "Online shopping platform with cart and wishlist features"
+  },
+  {
+    "name": "Task Manager",
+    "description": "App to manage daily tasks and productivity"
+  },
+  {
+    "name": "Chat Application",
+    "description": "Real-time messaging app using WebSockets"
+  },
+  {
+    "name": "Weather App",
+    "description": "Displays real-time weather data using API integration"
+  },
+  {
+    "name": "Portfolio Website",
+    "description": "Personal portfolio to showcase projects and skills"
+  },
+  {
+    "name": "Blog Platform",
+    "description": "A platform to write, edit, and publish blogs"
+  },
+  {
+    "name": "Fitness Tracker",
+    "description": "Tracks workouts, calories, and health progress"
+  },
+  {
+    "name": "Online Learning System",
+    "description": "Platform for courses, videos, and quizzes"
+  },
+  {
+    "name": "Inventory Management",
+    "description": "System to manage stock, suppliers, and orders"
+  }
+]

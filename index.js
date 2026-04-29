@@ -3,6 +3,8 @@ initializeDatabase();
 
 const { seedUser } = require("./seedData/usersSeeding");
 // seedUser();
+const { seedProject } = require("./seedData/projectSeeding");
+// seedProject();
 
 const express = require("express");
 const cors = require("cors");
@@ -16,8 +18,6 @@ app.use(cors());
 const authRoutes = require("./routes/auth.routes");
 const projectRoutes = require("./routes/project.routes");
 const userRoutes = require("./routes/user.routes");
-
-
 
 app.use("/v1/auth", authRoutes);
 app.use("/v1/projects", projectRoutes);
