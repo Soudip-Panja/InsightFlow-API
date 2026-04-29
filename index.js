@@ -15,9 +15,13 @@ app.use(cors());
 
 const authRoutes = require("./routes/auth.routes");
 const projectRoutes = require("./routes/project.routes");
+const userRoutes = require("./routes/user.routes");
+
+
 
 app.use("/v1/auth", authRoutes);
 app.use("/v1/projects", projectRoutes);
+app.use("/v1/auth", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
