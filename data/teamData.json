@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Engineering Team",
+    "description": "Handles backend, frontend, and system architecture"
+  },
+  {
+    "name": "Design Team",
+    "description": "Responsible for UI/UX design and user experience"
+  },
+  {
+    "name": "Marketing Team",
+    "description": "Manages campaigns, branding, and promotions"
+  },
+  {
+    "name": "Sales Team",
+    "description": "Handles client acquisition and revenue generation"
+  },
+  {
+    "name": "Operations Team",
+    "description": "Ensures smooth day-to-day business operations"
+  }
+]
