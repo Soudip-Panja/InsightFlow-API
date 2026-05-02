@@ -35,4 +35,30 @@ router.post("/", async (req, res) => {
   }
 });
 
+//Get all projects
+async function getAllProjects() {
+  try {
+    const projects = await Project.find();
+    return projects;
+  } catch (error) {
+    console.log("Error fetching projects:", error.message);
+    throw error;
+  }
+}
+
+router.get("/", async (req, res) => {
+  try {
+    const data = await getAllProjects();
+
+    res.status(200).json({
+      message: "Projects fetched successfully",
+      projects: data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
 module.exports = router;
