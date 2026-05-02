@@ -146,7 +146,6 @@ async function updateTask(taskId, updateData) {
 
     updateFields.updatedAt = Date.now();
 
-    // ================= UPDATE TASK =================
     const updatedTask = await Task.findByIdAndUpdate(taskId, updateFields, {
       returnDocument: "after",
     });
@@ -168,6 +167,37 @@ router.post("/:id", async (req, res) => {
 
     res.status(200).json({
       message: "Task updated successfully",
+      task: data,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+});
+
+//Delete task
+async function deleteTask(taskId) {
+  try {
+    const deletedTask = await Task.findByIdAndDelete(taskId);
+
+    if (!deletedTask) {
+      throw new Error("Task not found");
+    }
+
+    return deletedTask;
+  } catch (error) {
+    console.log("Error deleting task:", error.message);
+    throw error;
+  }
+}
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const data = await deleteTask(req.params.id);
+
+    res.status(200).json({
+      message: "Task deleted successfully",
       task: data,
     });
   } catch (error) {
