@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Build Finance Dashboard UI",
+    "project": "69f201f4eeb86ff63338cd",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b4b768ff39bb89ad32", "69ecb1b5b768ff39bb89ad35"],
+    "tags": ["frontend", "dashboard"],
+    "timeToComplete": 12,
+    "status": "To Do"
+  },
+  {
+    "name": "Design E-Commerce UI",
+    "project": "69f201f2f4eeb86ff63338cf",
+    "team": "69f33d8b78897ac03ab8ab7e",
+    "owners": ["69ecb1b5b768ff39bb89ad34"],
+    "tags": ["ui", "ux"],
+    "timeToComplete": 10,
+    "status": "In Progress"
+  },
+  {
+    "name": "Implement Cart API",
+    "project": "69f201f2f4eeb86ff63338cf",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b5b768ff39bb89ad35"],
+    "tags": ["backend", "api"],
+    "timeToComplete": 14,
+    "status": "To Do"
+  },
+  {
+    "name": "Create Task CRUD APIs",
+    "project": "69f201f2f4eeb86ff63338d0",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b5b768ff39bb89ad36"],
+    "tags": ["backend"],
+    "timeToComplete": 11,
+    "status": "In Progress"
+  },
+  {
+    "name": "Build Chat Socket Server",
+    "project": "69f201f2f4eeb86ff63338d1",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b4b768ff39bb89ad32"],
+    "tags": ["websocket", "backend"],
+    "timeToComplete": 15,
+    "status": "Blocked"
+  },
+  {
+    "name": "Weather API Integration",
+    "project": "69f201f2f4eeb86ff63338d2",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b5b768ff39bb89ad37"],
+    "tags": ["api", "integration"],
+    "timeToComplete": 8,
+    "status": "Completed"
+  },
+  {
+    "name": "Portfolio UI Design",
+    "project": "69f201f2f4eeb86ff63338d3",
+    "team": "69f33d8b78897ac03ab8ab7e",
+    "owners": ["69ecb1b5b768ff39bb89ad38"],
+    "tags": ["design"],
+    "timeToComplete": 6,
+    "status": "Completed"
+  },
+  {
+    "name": "Blog Backend Setup",
+    "project": "69f201f2f4eeb86ff63338d4",
+    "team": "69f33d8978897ac03ab8ab7c",
+    "owners": ["69ecb1b5b768ff39bb89ad35", "69ecb1b5b768ff39bb89ad36"],
+    "tags": ["backend", "database"],
+    "timeToComplete": 13,
+    "status": "In Progress"
+  },
+  {
+    "name": "Fitness Tracker Features",
+    "project": "69f201f2f4eeb86ff63338d5",
+    "team": "69f33d8b78897ac03ab8ab7f",
+    "owners": ["69ecb1b5b768ff39bb89ad37"],
+    "tags": ["feature"],
+    "timeToComplete": 9,
+    "status": "To Do"
+  },
+  {
+    "name": "Inventory Management System Setup",
+    "project": "69f201f2f4eeb86ff63338d7",
+    "team": "69f33d8b78897ac03ab8ab81",
+    "owners": ["69ecb1b4b768ff39bb89ad32", "69ecb1b5b768ff39bb89ad34"],
+    "tags": ["operations", "system"],
+    "timeToComplete": 16,
+    "status": "To Do"
+  }
+]
