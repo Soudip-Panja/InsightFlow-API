@@ -5,8 +5,10 @@ const { seedUser } = require("./seedData/usersSeeding");
 // seedUser();
 const { seedProject } = require("./seedData/projectSeeding");
 // seedProject();
-const { seedTeam } = require("./seedData/teamSeeding")
+const { seedTeam } = require("./seedData/teamSeeding");
 // seedTeam()
+const { seedTask } = require("./seedData/taskSeeding");
+// seedTask();
 
 const express = require("express");
 const cors = require("cors");
